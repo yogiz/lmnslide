@@ -10,3 +10,27 @@
  Text Domain:  understrap-child
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
 */
+
+.wrapper {
+    padding:0;
+}
+
+
+@media (min-width: 992px) {
+	.navbar-toggleable-md .navbar-collapse {
+	    display: inline-block !important;
+	    width: 100%;
+	    text-align: right;
+	}
+	.navbar-toggleable-md .navbar-nav {
+		display: inline-block;
+	}
+	.navbar-title {
+		display: inline-block;
+	}
+}
+
+.navbar-inverse .navbar-toggler {
+	position: absolute;
+    right: 0px;
+}

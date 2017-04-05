@@ -2,39 +2,26 @@
 Error: File to import not found or unreadable: ../../src/sass/bootstrap4/variables.
        Load path: D:/projects/test3/wp-content/themes/lmnslide/sass
         on line 9 of sass/assets/bootstrap4.scss
-        from line 3 of sass/child-theme.scss
 
-4: @import "../src/sass/understrap/understrap/understrap";// <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
-5: @import "../src/sass/understrap/theme/contact-form7";// <-------- Loads some basic styling for contact form 7 plugin
-6: 
-7: //Optional files - If you don┬┤t use the corresponding scripts/fonts comment em out
-8: @import "assets/font-awesome"; // <------- Font Awesome Icon font
-9: @import "assets/underscores"; // <------- Underscores media styles
-10: 
-11: // Any additional imported files //
-12: @import "theme/child_theme";  // <--------- Add your styles into this file
+4:  * Copyright 2011-2017 Twitter, Inc.
+5:  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+6:  *\/
+7: 
+8: // Core variables and mixins
+9: @import "../../src/sass/bootstrap4/variables";
+10: @import "../../src/sass/bootstrap4/mixins";
+11: @import "../../src/sass/bootstrap4/custom";
+12: 
+13: // Reset and dependencies
+14: @import "../../src/sass/bootstrap4/normalize";
 
 Backtrace:
 sass/assets/bootstrap4.scss:9
-sass/child-theme.scss:3
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:37:in `css_import?'
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
 C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
@@ -70,4 +57,4 @@ C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ../../src/sass/bootstrap4/variables.\A        Load path: D:/projects/test3/wp-content/themes/lmnslide/sass\A         on line 9 of sass/assets/bootstrap4.scss\A         from line 3 of sass/child-theme.scss\A \A 4: @import \"../src/sass/understrap/understrap/understrap\";// <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP\A 5: @import \"../src/sass/understrap/theme/contact-form7\";// <-------- Loads some basic styling for contact form 7 plugin\A 6: \A 7: //Optional files - If you don┬┤t use the corresponding scripts/fonts comment em out\A 8: @import \"assets/font-awesome\"; // <------- Font Awesome Icon font\A 9: @import \"assets/underscores\"; // <------- Underscores media styles\A 10: \A 11: // Any additional imported files //\A 12: @import \"theme/child_theme\";  // <--------- Add your styles into this file"; }
+  content: "Error: File to import not found or unreadable: ../../src/sass/bootstrap4/variables.\A        Load path: D:/projects/test3/wp-content/themes/lmnslide/sass\A         on line 9 of sass/assets/bootstrap4.scss\A \A 4:  * Copyright 2011-2017 Twitter, Inc.\A 5:  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\A 6:  */\A 7: \A 8: // Core variables and mixins\A 9: @import \"../../src/sass/bootstrap4/variables\";\A 10: @import \"../../src/sass/bootstrap4/mixins\";\A 11: @import \"../../src/sass/bootstrap4/custom\";\A 12: \A 13: // Reset and dependencies\A 14: @import \"../../src/sass/bootstrap4/normalize\";"; }
