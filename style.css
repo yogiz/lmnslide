@@ -11,9 +11,37 @@
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
 */
 
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
 .wrapper {
     padding:0;
 }
+
+
+
+/*header */
+
+.navbar-inverse .navbar-toggler {
+	position: absolute;
+    right: 0px;
+}
+
+#main-menu .menu-item {
+	border-left : 2px solid white;
+}
+
+
+.navbar-inverse .navbar-nav .nav-link {
+    color:white;
+}
+
 
 
 @media (min-width: 992px) {
@@ -28,9 +56,45 @@
 	.navbar-title {
 		display: inline-block;
 	}
+	.navbar-toggleable-md .navbar-nav .nav-link {
+	    padding-right: 1rem;
+	    padding-left: 1rem;
+	}
+	a.nav-link {
+	    padding: 0;
+	    line-height: 1;
+	    font-size: 20px;
+	    font-family: 'Roboto', sans-serif;
+	}
+	#main-menu .menu-item:first-child {
+		border-left : 0px solid white;
+	}
 }
 
-.navbar-inverse .navbar-toggler {
-	position: absolute;
-    right: 0px;
+
+/* homepage */
+#page-wrapper-child {
+	height: 480px;
+	opacity: 0.9;
+}
+#page-wrapper-child > .container {
+	height: 100%;
+	position: relative
+}
+.hero-main {
+	padding-top:150px;
+}
+
+.hero-caption {
+    text-align: center;
+    font-family: 'Roboto';
+    line-height: 1;
+}
+
+.hero-caption.n1 {
+    font-size: 40px;
+}
+
+.hero-caption.n2,.hero-caption.n3 {
+	font-size: 80px;
 }
