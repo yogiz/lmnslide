@@ -73,13 +73,21 @@ body {
 
 
 /* homepage */
-#page-wrapper-child {
+#page-wrapper{
 	height: 480px;
-	opacity: 0.9;
+	position: relative;
 }
-#page-wrapper-child > .container {
+#page-wrapper-child {
+	opacity: 0.9;
 	height: 100%;
-	position: relative
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+#page-wrapper > .container {
+	height: 100%;
+	position: relative;
+	z-index:9;
 }
 .hero-main {
 	padding-top:150px;
@@ -97,4 +105,14 @@ body {
 
 .hero-caption.n2,.hero-caption.n3 {
 	font-size: 80px;
+}
+
+#page-wrapper .icon-panah{
+	text-align: center;
+    margin-top: 60px;
+
+}
+
+.icon-panah {
+    font-size: 40px;
 }
