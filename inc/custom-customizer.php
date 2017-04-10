@@ -99,6 +99,97 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
 			) ) 
 		);
 
+
+    	/******** section produk ********/
+	    $wp_customize->add_section('lmnslide_home_produk',array(
+	        'title' => __('Setting Produk','lmnslide'),
+	        'priority' => 0,
+	        'panel' => 'lmnslide_homepage'
+	    ));
+
+	    // produk 1
+
+	    $wp_customize->add_setting('home_produk_title_1',array('default' => 'Setting produk title #1'));
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_produk_title_1', 
+			array(
+				'label'      => __( 'Produk title #1', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_title_1',
+			) ) 
+		);
+
+	    $wp_customize->add_setting('home_produk_image_1');
+		$wp_customize->add_control( 
+			new WP_Customize_Image_Control( 
+			$wp_customize, 
+			'home_produk_image_1', 
+			array(
+				'label'      => __( 'Produk image #1', 'lmnslide' ),
+				'description'=> 'Pilih gambar untuk hero background',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_image_1',
+			) ) 
+		);
+
+	    $wp_customize->add_setting('home_produk_url_1');
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_produk_url_1', 
+			array(
+				'label'      => __( 'Produk url #1', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_url_1',
+				'type'		 => 'url'
+			) ) 
+		);
+
+		// produk 2
+
+	    $wp_customize->add_setting('home_produk_title_2',array('default' => 'Setting produk title #2'));
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_produk_title_2', 
+			array(
+				'label'      => __( 'Produk title #2', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_title_2',
+			) ) 
+		);
+
+		$wp_customize->add_setting('home_produk_image_2');
+		$wp_customize->add_control( 
+			new WP_Customize_Image_Control( 
+			$wp_customize, 
+			'home_produk_image_2', 
+			array(
+				'label'      => __( 'Produk image #2', 'lmnslide' ),
+				'description'=> 'Pilih gambar untuk hero background',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_image_2',
+			) ) 
+		);
+
+	    $wp_customize->add_setting('home_produk_url_2');
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_produk_url_2', 
+			array(
+				'label'      => __( 'Produk url #2', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_url_2',
+				'type'		 => 'url'
+			) ) 
+		);
 	}
 }
 

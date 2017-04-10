@@ -145,5 +145,52 @@ body {
 	height: 100%;
 	width: 100%;
 	z-index: 2;
+}
 
+.produk-content-container{
+    position: relative;
+    height: 100%;
+}
+
+.judul-section{
+    font-size: 40px;
+	text-align: center;
+    padding-top: 45px;
+    margin-bottom: 30px;
+}
+
+.isi-produk .img-layout {
+	text-align: center;
+}
+.img-dasar {
+    margin-bottom: 20px;
+}
+
+.isi-produk .img-isi {
+	position: absolute;
+    height: 180px;
+    width: 320px;
+    top: 13px;
+    left: 50%;
+    left: calc(50% - 1px);
+    transform: translateX(-50%);
+    background-size: cover;
+}
+
+.isi-produk .deskripsi .judul{
+
+}
+
+.isi-produk .deskripsi .btn{
+    font-family: 'Ubuntu', sans-serif;
+    background: white;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 26px;
+    cursor: pointer;
+}
+
+.isi-produk .deskripsi .btn:hover{
+	background-color: rgb(214, 214, 214);
 }
