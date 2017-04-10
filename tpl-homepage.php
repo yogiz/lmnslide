@@ -36,12 +36,30 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		</main><!-- #main -->
 	</div><!-- Container end -->
 </div><!-- Wrapper end -->
-<div class="wrapper hr-line">
-	
+
+<div class="wrapper hr-line" style="background-color: <?php echo $warna_2;?>;">
 </div>
 
 <div class="wrapper" id="produk-wrapper">
+	<div class="atas"></div>
+	<div class="bawah" style="background-color: <?php echo $warna_2;?>;"></div>
+	<div class="wrapper content">
+		<div class="container">
+			<h2 class="judul-section" id="section-produk">PRODUK</h2>
+			<div class="isi-produk">
+				<div class="img-layout">
+					<img src="" class="img-dasar">
+					<img src="" class="img-isi">
+				</div>
+				<div class="img-layout">
+					<img src="" class="img-dasar">
+					<img src="" class="img-isi">
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
 	
 </div>
 

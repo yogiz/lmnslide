@@ -116,3 +116,34 @@ body {
 .icon-panah {
     font-size: 40px;
 }
+
+.wrapper.hr-line{
+	height: 70px;
+	position: relative;
+	z-index: 9;
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.68);
+	box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.68);
+}
+
+#produk-wrapper {
+	height: 520px;
+	position: relative;
+}
+
+#produk-wrapper .atas{
+	height: 320px;
+}
+
+#produk-wrapper .bawah{
+	height: 200px;
+}
+
+#produk-wrapper .content{
+	position: absolute;
+	top:0;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+
+}

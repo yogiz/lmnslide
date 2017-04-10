@@ -31,6 +31,10 @@ global $warna_1;
 if (get_theme_mod('warna_1')) {
 	$warna_1 = get_theme_mod('warna_1');
 } else {$warna_1 = '#FCB714';}
+global $warna_2;
+if (get_theme_mod('warna_2')) {
+	$warna_2 = get_theme_mod('warna_2');
+} else {$warna_2 = '#242426';}
 
 
  ?>
@@ -41,7 +45,7 @@ if (get_theme_mod('warna_1')) {
 <div class="hfeed site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" style="background-color: <?php echo $warna_2;?>;">
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content',
 		'understrap' ); ?></a>
