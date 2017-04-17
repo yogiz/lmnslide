@@ -61,7 +61,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							} else { echo 'Setting produk title #1';}
 							 ?>
 						</h3>
-						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_1)); ?>" class="btn">Lihat Detail</a>
+						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_1)); ?>" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
 					</div>
 				</div>
 				<div class="img-layout col-md-6">
@@ -78,7 +78,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							} else { echo 'Setting produk title #2'; }
 							 ?>
 						</h3>
-						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_2)); ?>" class="btn">Lihat Detail</a>
+						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_2)); ?>" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
 					</div>
 				</div>
 			</div>
@@ -86,8 +86,96 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	</div>
 </div>
 
-	
+<div class="wrapper" id="wrapper-testimonial">
+	<?php if(get_theme_mod('home_testi_image')){
+		$back_testi = get_theme_mod('home_testi_image');
+		}?>
+	<div class="container" style="background: url(<?php echo $back_testi;?>)no-repeat center center;    height: 100%; background-size: cover;">
+		<div class="wrapper" id="testi-content">
+			<h2 class="judul-section" id="section-produk">
+				<?php if(get_theme_mod('home_testi_title')){echo get_theme_mod('home_testi_title');} else {echo 'TESTIMONIAL';}?>
+			</h2>
+
+			<div class="content">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				  <ol class="carousel-indicators">
+				  <?php 
+				  	$args = array(
+							'post_type' => 'testimoni',
+							'orderby' => 'date'
+						);
+					$loop = new WP_Query( $args );
+					$count_testi = $loop->post_count;
+					for ($i=0; $i < $count_testi; $i++) { 
+						echo '<li data-target="#carouselExampleIndicators" data-slide-to="'.$i.'"';
+						if ($i==0){ echo 'class="active"';}
+						echo '></li>';
+					}
+				   ?>
+				  </ol>
+				  <div class="carousel-inner" role="listbox">
+					<?php 
+					$count=1;
+				if ( $loop->have_posts() ){
+					while ( $loop->have_posts() ) : $loop->the_post();
+
+						$meta_jabatan = get_post_meta( get_the_ID(), '_meta_jabatan', true );
+							?>
+							<div class="carousel-item <?php if($count==1){echo 'active';} ?>">
+							<div class="d-none d-md-block">
+								<div class="thumbnail "><div><?php the_post_thumbnail(); ?></div></div>
+								<div class="isi "><?php the_content(); ?></div>
+								<div class="nama "><span><?php the_title(); ?></span></div>
+								<div class="jabatan "><?php echo $meta_jabatan; ?></div>
+							</div>
+							</div>
+
+						<?php
+							$count=0;
+					 endwhile; }
+					 wp_reset_postdata();
+					 ?>
+				  </div>
+				  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
 </div>
 
+<div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
+</div>
 
+<div class="wrapper" id="wrapper-klien">
+</div>
+
+</div>
 <?php get_footer(); ?>
+
+<style type="text/css">
+	/*caraousel*/
+	.carousel-indicators li{
+		background-color: <?php echo $warna_2;?>;
+	}
+	.carousel-indicators .active {
+		background-color: <?php echo $warna_1;?>;
+	}
+	.carousel-control-prev, .carousel-control-next, .carousel-control-prev:focus, .carousel-control-next:focus {
+		color: <?php echo $warna_2;?>;
+		opacity: 0.7;
+		font-size: 30px;
+	}
+	.carousel-control-prev:hover, .carousel-control-next:hover {
+		color: <?php echo $warna_1;?>;
+	}
+</style>

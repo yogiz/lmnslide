@@ -190,6 +190,40 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
 				'type'		 => 'url'
 			) ) 
 		);
+
+    	/******** section testimonial ********/
+	    $wp_customize->add_section('lmnslide_home_testi',array(
+	        'title' => __('Setting Testimonial','lmnslide'),
+	        'priority' => 0,
+	        'panel' => 'lmnslide_homepage'
+	    ));
+
+	    $wp_customize->add_setting('home_testi_title',array('default' => 'TESTIMONIAL'));
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_testi_title', 
+			array(
+				'label'      => __( 'Judul Section', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_testi',
+				'settings'   => 'home_testi_title',
+			) ) 
+		);
+
+		$wp_customize->add_setting('home_testi_image');
+		$wp_customize->add_control( 
+			new WP_Customize_Image_Control( 
+			$wp_customize, 
+			'home_testi_image', 
+			array(
+				'label'      => __( 'Image background', 'lmnslide' ),
+				'description'=> 'Ukuran optimal <br> tinggi: 550px dan panjang:1140px',
+				'section'    => 'lmnslide_home_testi',
+				'settings'   => 'home_testi_image',
+			) ) 
+		);
+
 	}
 }
 
