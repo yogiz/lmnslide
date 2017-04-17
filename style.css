@@ -296,3 +296,8 @@ body {
     max-width: none;
     width: auto;
 }
+
+/*footer*/
+#wrapper-kontak {
+	height: 370px;
+}

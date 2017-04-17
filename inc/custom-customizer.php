@@ -36,7 +36,7 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
     		array(
     			'title' => esc_html__('[+] Pengaturan Web-home', 'lmnslide'),
     			'description' => '', 'capability' => 'edit_theme_options',
-    			'theme_supports' => '', 'priority' => 200
+    			'theme_supports' => '', 'priority' => 250
     			)
     		);
 

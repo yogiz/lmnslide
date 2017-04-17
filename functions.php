@@ -23,9 +23,10 @@ function theme_enqueue_styles() {
 
 //custom customizer
 require __DIR__.'/inc/custom-customizer.php';
-
+require __DIR__.'/inc/customizer-footer.php';
 
 // CPT
 require __DIR__.'/inc/testimoni-cpt.php';
 require __DIR__.'/inc/klien-cpt.php';
+
 
