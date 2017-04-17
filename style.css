@@ -274,3 +274,25 @@ body {
     font-family: 'roboto';
     font-weight: 300;
 }
+
+/*klien*/
+
+#wrapper-klien{
+	padding-bottom: 40px;
+}
+
+.content-klien {
+    text-align: center;
+    margin: 20px 0 0px;
+}
+
+.klien-img {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.klien-img img {
+    height: 75px;
+    max-width: none;
+    width: auto;
+}

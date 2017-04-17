@@ -103,7 +103,7 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
     	/******** section produk ********/
 	    $wp_customize->add_section('lmnslide_home_produk',array(
 	        'title' => __('Setting Produk','lmnslide'),
-	        'priority' => 0,
+	        'priority' => 1,
 	        'panel' => 'lmnslide_homepage'
 	    ));
 
@@ -194,7 +194,7 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
     	/******** section testimonial ********/
 	    $wp_customize->add_section('lmnslide_home_testi',array(
 	        'title' => __('Setting Testimonial','lmnslide'),
-	        'priority' => 0,
+	        'priority' => 2,
 	        'panel' => 'lmnslide_homepage'
 	    ));
 
@@ -221,6 +221,26 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
 				'description'=> 'Ukuran optimal <br> tinggi: 550px dan panjang:1140px',
 				'section'    => 'lmnslide_home_testi',
 				'settings'   => 'home_testi_image',
+			) ) 
+		);
+
+    	/******** section klien ********/
+	    $wp_customize->add_section('lmnslide_home_klien',array(
+	        'title' => __('Setting Klien','lmnslide'),
+	        'priority' => 3,
+	        'panel' => 'lmnslide_homepage'
+	    ));
+
+	    $wp_customize->add_setting('home_klien_title',array('default' => 'KLIEN KAMI'));
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_klien_title', 
+			array(
+				'label'      => __( 'Judul Section', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_klien',
+				'settings'   => 'home_klien_title',
 			) ) 
 		);
 

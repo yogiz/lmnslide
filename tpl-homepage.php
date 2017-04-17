@@ -102,7 +102,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				  <?php 
 				  	$args = array(
 							'post_type' => 'testimoni',
-							'orderby' => 'date'
+							'orderby' => 'date',
+							'posts_per_page' => 8
 						);
 					$loop = new WP_Query( $args );
 					$count_testi = $loop->post_count;
@@ -156,7 +157,31 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
 </div>
 
-<div class="wrapper" id="wrapper-klien">
+<div class="wrapper" id="wrapper-klien" style="background-color: <?php echo $warna_1;?>;">
+	<div class="container">
+
+		<h2 class="judul-section" id="section-produk">
+				<?php if(get_theme_mod('home_klien_title')){echo get_theme_mod('home_klien_title');} else {echo 'KLIEN KAMI';}?>
+		</h2>
+		<div class="content-klien">
+				  <?php 
+				  	$args = array(
+							'post_type' => 'klien',
+							'orderby' => 'date',
+							'posts_per_page' => 12
+						);
+					$loop = new WP_Query( $args );
+
+				if ( $loop->have_posts() ){
+					while ( $loop->have_posts() ) : $loop->the_post();
+						echo '<div class="klien-img">';
+						the_post_thumbnail();
+						echo '</div>';
+					endwhile; }
+					wp_reset_postdata();
+				   ?>
+		</div>
+	</div>
 </div>
 
 </div>
