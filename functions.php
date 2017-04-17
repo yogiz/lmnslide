@@ -24,3 +24,4 @@ function theme_enqueue_styles() {
 
 //custom customizer
 require __DIR__.'/inc/custom-customizer.php';
+require __DIR__.'/inc/customizer-footer.php';
