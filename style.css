@@ -299,5 +299,46 @@ body {
 
 /*footer*/
 #wrapper-kontak {
-	height: 370px;
+
+}
+
+.kontak-isi .row {
+    padding: 5px;
+}
+
+.kontak-isi .border-icon {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: #242426;
+}
+
+.kontak-isi .data-kontak {
+    font-size: 20px;
+    padding: 6px;
+    font-weight: bold;
+}
+
+.kontak-isi .media-sosial{
+	padding-top: 40px;
+}
+.kontak-isi .media-sosial a{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 4px;
+    padding-top: 3px;
+    border: 3px solid #242426;
+    border-radius: 10px;
+}
+
+.kontak-isi .media-sosial a:hover{
+	background:hsla(0, 0%, 5%, 0.29);
+}
+
+.kontak-isi .media-sosial a i {
+    color: #242426;
+    font-size: 30px;
 }

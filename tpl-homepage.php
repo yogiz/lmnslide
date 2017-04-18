@@ -158,7 +158,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 </div>
 
 <div class="wrapper" id="wrapper-klien" style="background-color: <?php echo $warna_1;?>;">
-	<div class="container">
+	<div class="<?php echo esc_html( $container ); ?>">
 
 		<h2 class="judul-section" id="section-produk">
 				<?php if(get_theme_mod('home_klien_title')){echo get_theme_mod('home_klien_title');} else {echo 'KLIEN KAMI';}?>

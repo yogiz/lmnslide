@@ -12,9 +12,9 @@ if ( ! function_exists( 'lmnslide_customize_footer' ) ) {
 			)
 		);
 
-    	/******** section hero ********/
+    	/******** section data kontak ********/
 	    $wp_customize->add_section('lmnslide_kontak_section',array(
-	        'title' => __('Setting Kontak Kami','lmnslide'),
+	        'title' => __('Setting Data Kontak','lmnslide'),
 	        'priority' => 0,
 	        'panel' => 'lmnslide_footer'
 	    ));
@@ -113,6 +113,25 @@ if ( ! function_exists( 'lmnslide_customize_footer' ) ) {
 			) ) 
 		);
 
+			/*section kontak form*/
+	    $wp_customize->add_section('lmnslide_kontak_form_section',array(
+	        'title' => __('Setting Form Kontak','lmnslide'),
+	        'priority' => 0,
+	        'panel' => 'lmnslide_footer'
+	    ));
+
+	    $wp_customize->add_setting('kontak_shortcode');
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'kontak_shortcode', 
+			array(
+				'label'      => __( 'Shortcode', 'lmnslide' ),
+				'description'=> 'masukkan shortcode dari plugin contact form',
+				'section'    => 'lmnslide_kontak_form_section',
+				'settings'   => 'kontak_shortcode',
+			) ) 
+		);
 
 	}
 }
