@@ -28,5 +28,6 @@ require __DIR__.'/inc/customizer-footer.php';
 // CPT
 require __DIR__.'/inc/testimoni-cpt.php';
 require __DIR__.'/inc/klien-cpt.php';
+require __DIR__.'/inc/training-cpt.php';
 
 
