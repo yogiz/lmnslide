@@ -30,10 +30,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					} else {echo "Setting hero caption #3";} 
 					?>
 			</div>
-			<div class="icon-panah">
-				<i class="fa fa-chevron-down" aria-hidden="true"></i>
-			</div>
 		</main><!-- #main -->
+		<div class="icon-panah">
+			<i class="fa fa-chevron-down" aria-hidden="true"></i>
+		</div>
 	</div><!-- Container end -->
 </div><!-- Wrapper end -->
 

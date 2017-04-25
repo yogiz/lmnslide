@@ -8,7 +8,7 @@ if ( ! function_exists( 'lmnslide_customize_footer' ) ) {
 		array(
 			'title' => esc_html__('[+] Pengaturan Footer', 'lmnslide'),
 			'description' => '', 'capability' => 'edit_theme_options',
-			'theme_supports' => '', 'priority' => 251
+			'theme_supports' => '', 'priority' => 300
 			)
 		);
 
