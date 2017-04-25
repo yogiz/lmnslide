@@ -25,7 +25,11 @@ if (get_theme_mod('warna_2')) {
 
 	<div class="<?php echo esc_html( $container ); ?>">
 		<h2 class="judul-section" id="section-produk">
-			HUBUNGI KAMI
+			<?php if (is_page_template('tpl-training.php')){
+				echo 'KERJASAMA';
+				} else {
+					echo 'HUBUNGI KAMI';
+				} ?>
 		</h2>
 		<div class="row">
 			<div class="col-md-6 kontak-isi">
@@ -90,26 +94,4 @@ if (get_theme_mod('warna_2')) {
 <?php wp_footer(); ?>
 
 </body>
-
-<style type="text/css">
-	.kontak-form input.wpcf7-form-control,.kontak-form textarea.wpcf7-form-control{
-	    background: <?php echo $warna_1;?>;
-	    border-radius: 0;
-	    border: 0px;
-	    color:<?php echo $warna_2;?>;
-	}
-	.kontak-form input.wpcf7-form-control:focus,.kontak-form textarea.wpcf7-form-control:focus{
-	    background: <?php echo $warna_1;?>;
-	}
-	.kontak-form .form-group, .wpcf7 .wpcf7-form p {
-    	margin-bottom: 0px;
-	}
-	.kontak-isi .border-icon i.fa{
-		font-size: 30px;
-		color: white;
-	}
-	.kontak-isi .border-icon {
-		background-color: <?php echo $warna_2;?>;
-	}
-</style>
 </html> 

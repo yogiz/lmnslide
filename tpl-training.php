@@ -29,6 +29,22 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		</main><!-- #main -->
 	</div><!-- Container end -->
 </div><!-- Wrapper end -->
+<div class="wrapper hr-line" style="background-color: #242426;">
+	<div class="<?php echo esc_html( $container ); ?> search-training">
+		<div class="text-right">
+			<form role="search" method="get" id="searchform" class="form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<div class="form-group" >
+					<input type="text" value="" name="s" id="tr_s" class="form-control" />
+					<input type="hidden" value="1" name="sentence" />
+					<input type="hidden" value="training" name="post_type" />
+					<button type="submit" id="tr_srcsubmit" class="btn">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 <div class="wrapper" id="training-wrapper">
 	<div class="<?php echo esc_html( $container ); ?>">
 		<h2 class="judul-section" id="section-training">
@@ -55,12 +71,19 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			</div>
 			<div class="training-fasilitas col-md-4">
 				<?php echo $meta_fasilitas;?>
+				<div class="tr_link">
+				<a href="<?php the_permalink(); ?>" target="_blank" style="background-color: <?php echo $warna_2;?>;">Lebih lengkap</a>					
+				</div>
+
 			</div>
 		</div>
 		<?php 
 			endwhile;
 		} ?>
 	</div>
+</div>
+
+<div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
 </div>
 
 <?php get_footer(); ?>

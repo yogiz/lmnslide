@@ -304,8 +304,58 @@ body {
 }
 
 /*training*/
+.search-training {
+	height: 100%;
+}
+
+.search-training .text-right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+#tr_s , #tr_srcsubmit{
+	border-radius: 15px;
+    border: 0px;
+    background-color: #515151;
+}
+
+#tr_s{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    color:white;
+}
+
+#tr_s:focus, #tr_s:hover {
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+    background-color: #515151;
+}
+
+#tr_srcsubmit{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
 #page-wrapper.training{
 	height: 300px;
+}
+#training-wrapper > .container {
+	padding-bottom: 100px;
+}
+#training-wrapper > .container >.row{
+	padding-top: 20px;
+}
+
+#training-wrapper > .container >.row:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 50%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid black; /* This creates the border. Replace black with whatever color you want. */
 }
 
 .hero-training .hero-caption.n1{
@@ -315,6 +365,48 @@ body {
 	font-size: 40px;
 }
 
+.trining-poster img{
+	width: 100%;
+	border:10px solid black;
+}
+
+.training-jadwal, .training-fasilitas{
+    padding-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.training-jadwal img{
+	height: 20px;
+	width: auto;
+	margin-left:10px;
+}
+
+.training-fasilitas ul {
+	list-style: none;
+	padding-left: 15px;
+}
+
+.training-fasilitas ul li:before {
+  content: "\02C3";
+  position: absolute;
+  left: 15px;
+}
+
+.training-fasilitas .tr_link{
+	margin-top:40px;
+}
+
+.training-fasilitas .tr_link a{
+    padding: 6px 15px;
+    color:white;
+    border-radius: 20px;
+}
+
+.training-fasilitas .tr_link a:hover{
+	text-decoration:none;
+    opacity: 0.7;
+}
 
 /*footer*/
 #wrapper-kontak {
@@ -362,3 +454,24 @@ body {
     font-size: 30px;
 }
 
+/*mailchimp signup*/
+#mc_embed_signup .form-group {
+    padding: 10px;
+}
+
+#mc_embed_signup .mc-group {
+    width: 100%;
+    font-family: 'roboto',sans-serif;
+    font-weight: normal;
+    font-size: 0;
+}
+
+#mc_embed_signup .mc-group input{
+	border:0px;
+	border-radius: 0px;
+}
+
+
+#mc_embed_signup .mc-description{
+	font-size: 1rem;
+}

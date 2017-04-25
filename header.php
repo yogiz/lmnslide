@@ -39,6 +39,46 @@ if (get_theme_mod('warna_2')) {
 
  ?>
 
+<style type="text/css">
+	/*caraousel*/
+	.carousel-indicators li{
+		background-color: <?php echo $warna_2;?>;
+	}
+	.carousel-indicators .active {
+		background-color: <?php echo $warna_1;?>;
+	}
+	.carousel-control-prev, .carousel-control-next, .carousel-control-prev:focus, .carousel-control-next:focus {
+		color: <?php echo $warna_2;?>;
+		opacity: 0.7;
+		font-size: 30px;
+	}
+	.carousel-control-prev:hover, .carousel-control-next:hover {
+		color: <?php echo $warna_1;?>;
+	}
+
+	/*footer*/
+	.kontak-form input.wpcf7-form-control,.kontak-form textarea.wpcf7-form-control{
+	    background: <?php echo $warna_1;?>;
+	    border-radius: 0;
+	    border: 0px;
+	    color:<?php echo $warna_2;?>;
+	}
+	.kontak-form input.wpcf7-form-control:focus,.kontak-form textarea.wpcf7-form-control:focus{
+	    background: <?php echo $warna_1;?>;
+	}
+	.kontak-form .form-group, .wpcf7 .wpcf7-form p {
+    	margin-bottom: 0px;
+	}
+	.kontak-isi .border-icon i.fa{
+		font-size: 30px;
+		color: white;
+	}
+	.kontak-isi .border-icon {
+		background-color: <?php echo $warna_2;?>;
+	}
+
+</style>
+
 
 <body <?php body_class(); ?>>
 
@@ -95,5 +135,4 @@ if (get_theme_mod('warna_2')) {
 			<?php endif; ?>
 
 		</nav><!-- .site-navigation -->
-
 	</div><!-- .wrapper-navbar end -->

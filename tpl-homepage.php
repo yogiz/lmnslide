@@ -186,21 +186,3 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 </div>
 <?php get_footer(); ?>
-
-<style type="text/css">
-	/*caraousel*/
-	.carousel-indicators li{
-		background-color: <?php echo $warna_2;?>;
-	}
-	.carousel-indicators .active {
-		background-color: <?php echo $warna_1;?>;
-	}
-	.carousel-control-prev, .carousel-control-next, .carousel-control-prev:focus, .carousel-control-next:focus {
-		color: <?php echo $warna_2;?>;
-		opacity: 0.7;
-		font-size: 30px;
-	}
-	.carousel-control-prev:hover, .carousel-control-next:hover {
-		color: <?php echo $warna_1;?>;
-	}
-</style>
