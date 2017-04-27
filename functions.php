@@ -49,14 +49,52 @@ function mailchimp_form($warna,$warna2,$container){
 }
 
 
+function general_admin_notice(){
+    global $pagenow;
+    if ( $pagenow == 'post.php' ) {
+         echo '<div class="notice notice-info">
+             <h1>Perhatian format poin-poin pada post.</h1>
+             <p>jika ingin membuat poin silahkan kopi paste kode di bawah, lalu aplikasiakan pada bagian post di mode "text"</p>
+             <pre>'.esc_html('<div class="poin">');
+         echo '<br>'.esc_html('<span> (isi nomer) </span>');
+         echo '<br>'.esc_html('<h4> (isi judul) </h4>');
+         echo '<br>'.esc_html('<p> (isi content) </p>');
+         echo '<br>'.esc_html('</div>');
+         echo '</pre><p>note : anda juga bisa mengedit isi konten poin pada mode "visual" jika sudah mengkopi kode diatas</p></div>';
+    }
+}
+add_action('admin_notices', 'general_admin_notice');
+
+
+if ( ! function_exists( 'all_excerpts_get_more_link' ) ) {
+    /**
+     * Adds a custom read more link to all excerpts, manually or automatically generated
+     *
+     * @param string $post_excerpt Posts's excerpt.
+     *
+     * @return string
+     */
+    function all_excerpts_get_more_link( $post_excerpt ) {
+
+        return $post_excerpt . '<p><a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Baca Artikel',
+        'understrap' ) . '</a></p>';
+    }
+}
+add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+
+
+
+
 //custom customizer
 require __DIR__.'/inc/custom-customizer.php';
 require __DIR__.'/inc/customizer-footer.php';
 require __DIR__.'/inc/customizer-training.php';
+require __DIR__.'/inc/customizer-post.php';
 
 // CPT
 require __DIR__.'/inc/testimoni-cpt.php';
 require __DIR__.'/inc/klien-cpt.php';
 require __DIR__.'/inc/training-cpt.php';
+
 
 

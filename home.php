@@ -1,18 +1,23 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package understrap
  */
 
 get_header();
+?>
+
+<?php
 $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
-
 <?php mailchimp_form($warna_1,$warna_2,$container); ?>
 
-<div class="wrapper wrapper-content" id="single-wrapper">
+<div class="wrapper wrapper-content" id="archive-wrapper">
+
 	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
@@ -20,27 +25,37 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<!-- Do the left sidebar check -->
 			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-			<main class="site-main single" id="main">
+			<main class="site-main" id="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) : ?>
 
-					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php understrap_post_nav(); ?>
+						<?php
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'loop-templates/content', get_post_format() );
+						?>
+
+					<?php endwhile; ?>
+
+				<?php else : ?>
+
+					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+
+				<?php endif; ?>
 
 			</main><!-- #main -->
-					<div class="comment-single">
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-						?>
-					</div>
 
-				<?php endwhile; // end of the loop. ?>
+			<!-- The pagination component -->
+			<?php understrap_pagination(); ?>
 
 		</div><!-- #primary -->
+
 		<div class="col-md-4 widget-area" id="right-sidebar" role="complementary">
 			<div class="sidebar-src">
 				<form role="search" method="get" id="searchform" class="form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -81,8 +96,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			</aside>
 			<?php dynamic_sidebar( 'right-sidebar' ); ?>
 		</div>
-
-	</div><!-- .row -->
+	</div> <!-- .row -->
 
 </div><!-- Container end -->
 
@@ -90,6 +104,5 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 <div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
 </div>
-
 
 <?php get_footer(); ?>
