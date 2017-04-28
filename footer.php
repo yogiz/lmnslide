@@ -19,7 +19,12 @@ if (get_theme_mod('warna_2')) {
 } else {$warna_2 = '#242426';}
 ?>
 
-<?php get_sidebar( 'footerfull' ); ?>
+<!-- <?php get_sidebar( 'footerfull' ); ?> -->
+
+	<?php  if  (!is_front_page()) { ?>
+		<div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
+		</div>
+	<?php }?>
 
 <div class="wrapper" id="wrapper-kontak">
 

@@ -12,7 +12,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <?php if(get_theme_mod('hero_back_img')){
 	$hero_img = get_theme_mod('hero_back_img');
 	}?>
-<div class="wrapper" id="page-wrapper" style="background: url(<?php echo $hero_img;?>)no-repeat; background-size: cover;">
+<div id="frontpage-wrapper" style="background: url(<?php echo $hero_img;?>)no-repeat; background-size: cover;">
 	<div class="wrapper" id="page-wrapper-child" style="background-color: <?php echo $warna_1;?>;">
 	</div>
 	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
@@ -91,7 +91,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		$back_testi = get_theme_mod('home_testi_image');
 		}?>
 	<div class="container" style="background: url(<?php echo $back_testi;?>)no-repeat center center;    height: 100%; background-size: cover;">
-		<div class="wrapper" id="testi-content">
+		<div id="testi-content">
 			<h2 class="judul-section" id="section-produk">
 				<?php if(get_theme_mod('home_testi_title')){echo get_theme_mod('home_testi_title');} else {echo 'TESTIMONIAL';}?>
 			</h2>

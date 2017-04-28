@@ -51,7 +51,7 @@ function mailchimp_form($warna,$warna2,$container){
 
 function general_admin_notice(){
     global $pagenow;
-    if ( $pagenow == 'post.php' ) {
+    if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' ) {
          echo '<div class="notice notice-info">
              <h1>Perhatian format poin-poin pada post.</h1>
              <p>jika ingin membuat poin silahkan kopi paste kode di bawah, lalu aplikasiakan pada bagian post di mode "text"</p>
@@ -60,7 +60,7 @@ function general_admin_notice(){
          echo '<br>'.esc_html('<h4> (isi judul) </h4>');
          echo '<br>'.esc_html('<p> (isi content) </p>');
          echo '<br>'.esc_html('</div>');
-         echo '</pre><p>note : anda juga bisa mengedit isi konten poin pada mode "visual" jika sudah mengkopi kode diatas</p></div>';
+         echo '</pre><p>note :<br>- tidak perlu tanda kurung () <br>- anda juga bisa mengedit isi konten poin pada mode "visual" jika sudah mengkopi kode diatas</p></div>';
     }
 }
 add_action('admin_notices', 'general_admin_notice');

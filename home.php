@@ -102,7 +102,5 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 </div><!-- Wrapper end -->
 
-<div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
-</div>
 
 <?php get_footer(); ?>

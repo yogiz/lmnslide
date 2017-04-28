@@ -83,7 +83,7 @@ input:focus,textarea:focus{
 
 
 /* homepage */
-#page-wrapper{
+#frontpage-wrapper{
 	height: 480px;
 	position: relative;
 }
@@ -94,7 +94,7 @@ input:focus,textarea:focus{
 	position: absolute;
 	z-index: 1;
 }
-#page-wrapper > .container {
+#frontpage-wrapper > .container {
 	height: 100%;
 	position: relative;
 	z-index:9;
@@ -123,7 +123,7 @@ input:focus,textarea:focus{
 	font-size: 80px;
 }
 
-#page-wrapper .icon-panah{
+#frontpage-wrapper .icon-panah{
     position: absolute;
     width: 100%;
     text-align: center;
@@ -178,7 +178,7 @@ input:focus,textarea:focus{
 .judul-section{
     font-size: 40px;
     text-align: center;
-    padding-top: 40px;
+    /*padding-top: 40px;*/
     margin-bottom: 25px;
     line-height: 1;
 }
@@ -347,11 +347,11 @@ input:focus,textarea:focus{
     border-top-left-radius: 0;
 }
 
-#page-wrapper.training{
+#frontpage-wrapper.training{
 	height: 300px;
 }
 #training-wrapper > .container {
-	padding-bottom: 100px;
+	padding-bottom: 40px;
 }
 #training-wrapper > .container >.row{
 	padding-top: 20px;
@@ -488,8 +488,9 @@ input:focus,textarea:focus{
 
 /*single*/
 
-.wrapper-content{
-    margin-top: 40px;
+.wrapper{
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 .hentry{
     border-top: 15px solid black;

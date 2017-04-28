@@ -13,7 +13,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <?php if(get_theme_mod('hero_training_img')){
 	$hero_img = get_theme_mod('hero_training_img');
 	}?>
-<div class="wrapper training" id="page-wrapper" style="background: url(<?php echo $hero_img;?>)no-repeat; background-size: cover;">
+<div class="training" id="frontpage-wrapper" style="background: url(<?php echo $hero_img;?>)no-repeat; background-size: cover;">
 	<div class="wrapper" id="page-wrapper-child" style="background-color: <?php echo $warna_1;?>;">
 	</div>
 	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
@@ -81,9 +81,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			endwhile;
 		} ?>
 	</div>
-</div>
-
-<div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
 </div>
 
 <?php get_footer(); ?>
