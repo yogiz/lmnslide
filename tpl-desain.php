@@ -9,79 +9,99 @@ $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
-<?php if(get_theme_mod('hero_back_img')){
-	$hero_img = get_theme_mod('hero_back_img');
+<?php if(get_theme_mod('hero_desain_img')){
+	$hero_img = get_theme_mod('hero_desain_img');
 	}?>
 <div id="frontpage-wrapper" style="background: url(<?php echo $hero_img;?>)no-repeat; background-size: cover;">
 	<div class="wrapper" id="page-wrapper-child" style="background-color: <?php echo $warna_1;?>;">
 	</div>
 	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
-		<main class="hero-main" id="main">
+		<main class="hero-main hero-desain" id="main">
 			<div class="hero-caption n1">
-				<?php if (get_theme_mod('hero_back_caption_1')){echo get_theme_mod('hero_back_caption_1');
+				<?php if (get_theme_mod('hero_desain_caption_1')){echo get_theme_mod('hero_desain_caption_1');
 					} else {echo "Setting hero caption #1";}?>
 			</div>
 			<div class="hero-caption n2">
-				<?php if (get_theme_mod('hero_back_caption_2')){echo get_theme_mod('hero_back_caption_2');
+				<?php if (get_theme_mod('hero_desain_caption_2')){echo get_theme_mod('hero_desain_caption_2');
 					} else {echo "Setting hero caption #2";} ?>
 			</div>
 			<div class="hero-caption n3">
-				<?php if (get_theme_mod('hero_back_caption_3')){echo get_theme_mod('hero_back_caption_3');
+				<?php if (get_theme_mod('hero_desain_caption_3')){echo get_theme_mod('hero_desain_caption_3');
 					} else {echo "Setting hero caption #3";} 
 					?>
 			</div>
 		</main><!-- #main -->
-		<div class="icon-panah">
-			<i class="fa fa-chevron-down" aria-hidden="true"></i>
-		</div>
 	</div><!-- Container end -->
 </div><!-- Wrapper end -->
 
 <div class="wrapper hr-line" style="background-color: <?php echo $warna_2;?>;">
 </div>
 
-<div class="wrapper" id="produk-wrapper">
-	<div class="atas"></div>
-	<div class="bawah" style="background-color: <?php echo $warna_2;?>;"></div>
-	<div class="wrapper content">
-		<div class="container produk-content-container">
-			<h2 class="judul-section" id="section-produk">PRODUK</h2>
-			<div class="isi-produk row">
-				<div class="img-layout col-md-6">
-					<img src="<?php echo get_stylesheet_directory_uri();?>/image/komputer.png" class="img-dasar">
-					<?php if(get_theme_mod('home_produk_image_1')){
-						$isi_img_1 = get_theme_mod('home_produk_image_1');
-						}?>
-					<div class="img-isi" style="background: url(<?php echo $isi_img_1; ?>)no-repeat;background-size: cover;"></div>
-					<div class="deskripsi">
-						<h3 class="judul" style="color: <?php echo $warna_1;?>;">
-							<?php 
-							if ( get_theme_mod('home_produk_title_1') ){
-								echo get_theme_mod('home_produk_title_1');
-							} else { echo 'Setting produk title #1';}
-							 ?>
-						</h3>
-						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_1)); ?>" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
-					</div>
-				</div>
-				<div class="img-layout col-md-6">
-					<img src="<?php echo get_stylesheet_directory_uri();?>/image/komputer.png" class="img-dasar">
-					<?php if(get_theme_mod('home_produk_image_2')){
-						$isi_img_2 = get_theme_mod('home_produk_image_2');
-						}?>
-					<div class="img-isi" style="background: url(<?php echo $isi_img_2; ?>)no-repeat;background-size: cover;"></div>
-					<div class="deskripsi">
-						<h3 class="judul" style="color: <?php echo $warna_1;?>;">
-							<?php 
-							if (get_theme_mod('home_produk_title_2')){
-								echo get_theme_mod('home_produk_title_2');
-							} else { echo 'Setting produk title #2'; }
-							 ?>
-						</h3>
-						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_2)); ?>" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
-					</div>
-				</div>
-			</div>
+<?php 
+function item_service($no){
+	if (get_theme_mod('desain_service_caption_'.$no)) {
+		$judul = get_theme_mod('desain_service_caption_'.$no);
+	} else {$judul = 'Setting service title #'.$no;}
+
+	printf('<h2 class="judul-section">%s</div>',$judul);
+	for ($i=1; $i <=3 ; $i++) { 
+		echo '<div class="service-item">';
+		echo '<div class="service-image"><img src="';
+		if (get_theme_mod('desain_service'.$no.'_img_'.$i)){
+			echo esc_url(get_theme_mod('desain_service'.$no.'_img_'.$i)); 
+		}
+		echo '"></div><div class="service-caption">';
+		if (get_theme_mod('desain_service'.$no.'_caption_'.$i)){
+			echo get_theme_mod('desain_service'.$no.'_caption_'.$i);
+		}
+		echo '</div><div class="service-desc">';
+		if (get_theme_mod('desain_service'.$no.'_desc_'.$i)){
+			echo get_theme_mod('desain_service'.$no.'_desc_'.$i);
+		}
+		echo '</div></div>';
+	}
+}
+
+ ?>
+
+<div class="wrapper" id="wrapper-service" >
+	<div class="<?php echo esc_html( $container ); ?>">
+		<div class="service-container service-1">
+			<?php item_service(1);?>
+		</div>
+		<div class="service-container service-2">
+			<?php item_service(2);?>
+		</div>
+	</div>
+</div>
+
+
+<div class="wrapper hr-line" style="background-color: <?php echo $warna_2;?>;">
+</div>
+
+<div class="wrapper" id="wrapper-klien" style="background-color: <?php echo $warna_1;?>;">
+	<div class="<?php echo esc_html( $container ); ?>">
+
+		<h2 class="judul-section" id="section-produk">
+				YANG TELAH MEMPERCAYAI KAMI
+		</h2>
+		<div class="content-klien">
+				  <?php 
+				  	$args = array(
+							'post_type' => 'klien',
+							'orderby' => 'date',
+							'posts_per_page' => 12
+						);
+					$loop = new WP_Query( $args );
+
+				if ( $loop->have_posts() ){
+					while ( $loop->have_posts() ) : $loop->the_post();
+						echo '<div class="klien-img">';
+						the_post_thumbnail();
+						echo '</div>';
+					endwhile; }
+					wp_reset_postdata();
+				   ?>
 		</div>
 	</div>
 </div>
@@ -157,32 +177,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
 </div>
 
-<div class="wrapper" id="wrapper-klien" style="background-color: <?php echo $warna_1;?>;">
-	<div class="<?php echo esc_html( $container ); ?>">
 
-		<h2 class="judul-section" id="section-produk">
-				<?php if(get_theme_mod('home_klien_title')){echo get_theme_mod('home_klien_title');} else {echo 'KLIEN KAMI';}?>
-		</h2>
-		<div class="content-klien">
-				  <?php 
-				  	$args = array(
-							'post_type' => 'klien',
-							'orderby' => 'date',
-							'posts_per_page' => 12
-						);
-					$loop = new WP_Query( $args );
-
-				if ( $loop->have_posts() ){
-					while ( $loop->have_posts() ) : $loop->the_post();
-						echo '<div class="klien-img">';
-						the_post_thumbnail();
-						echo '</div>';
-					endwhile; }
-					wp_reset_postdata();
-				   ?>
-		</div>
-	</div>
-</div>
 
 </div>
 <?php get_footer(); ?>

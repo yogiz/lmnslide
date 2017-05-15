@@ -616,3 +616,20 @@ div.poin h4{
 .kategori-item img{
     width: 100%;
 }
+
+
+#woocommerce-wrapper .widget-area {
+    /*display: none;*/
+}
+
+
+/*Desain*/
+.hero-desain .hero-caption.n1 {
+    font-size: 80px;
+}
+.hero-desain .hero-caption.n2 {
+    font-size: 40px;
+}
+.hero-desain .hero-caption.n3 {
+    font-size: 50px;
+}
