@@ -120,7 +120,7 @@ if ( ! function_exists( 'lmnslide_customize_desain' ) ) {
         'panel' => 'lmnslide_desain'
     ));
 
-    $wp_customize->add_setting('desain_harga_title',array('default' => 'Setting Title Harga'));
+    $wp_customize->add_setting('desain_harga_title',array('default' => 'HARGA'));
 	$wp_customize->add_control( 
 		new WP_Customize_Control( 
 		$wp_customize, 

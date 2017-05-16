@@ -97,6 +97,20 @@ if (get_theme_mod('warna_2')) {
 	    color: white;
 	    border-radius: 20px;
    	}
+
+/*desain*/
+	.paket-item{
+		color :<?php echo $warna_2;?>;
+	}
+	.paket-box {
+		background-color: <?php echo $warna_1;?>;
+	}
+	.paket-harga {
+		background-color: <?php echo $warna_2;?>;
+		color :<?php echo $warna_1;?>;
+	}
+
+
 </style>
 
 

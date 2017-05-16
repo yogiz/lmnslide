@@ -83,7 +83,21 @@ if ( ! function_exists( 'all_excerpts_get_more_link' ) ) {
 }
 add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
 
+//fungsi konvert harga
 
+function rubah_harga($n){
+    if ($n < 1000) {
+        // Anything less than a million
+        $n_format = '<span>'.number_format($n).'</span>rp';
+    } else if ($n < 1000000) {
+        // Anything less than a billion
+        $n_format = '<span>'.number_format($n / 1000) . '</span>k';
+    } else {
+        // At least a billion
+        $n_format = '<span>'.number_format($n / 1000000) . '</span>m';
+    }
+    echo $n_format;
+}
 
 
 //custom customizer

@@ -43,10 +43,11 @@ function item_service($no){
 		$judul = get_theme_mod('desain_service_caption_'.$no);
 	} else {$judul = 'Setting service title #'.$no;}
 
-	printf('<h2 class="judul-section">%s</div>',$judul);
+	printf('<h2 class="judul-section">%s</h2>',$judul);
+	echo '<div class="row">';
 	for ($i=1; $i <=3 ; $i++) { 
-		echo '<div class="service-item">';
-		echo '<div class="service-image"><img src="';
+		echo '<div class="service-item col-md-4 col-sm-4 col-xs-12">';
+		echo '<div class="service-image"><img class="anim-logo" src="';
 		if (get_theme_mod('desain_service'.$no.'_img_'.$i)){
 			echo esc_url(get_theme_mod('desain_service'.$no.'_img_'.$i)); 
 		}
@@ -60,6 +61,7 @@ function item_service($no){
 		}
 		echo '</div></div>';
 	}
+	echo '</div>';
 }
 
  ?>
@@ -76,7 +78,7 @@ function item_service($no){
 </div>
 
 
-<div class="wrapper hr-line" style="background-color: <?php echo $warna_2;?>;">
+<div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
 </div>
 
 <div class="wrapper" id="wrapper-klien" style="background-color: <?php echo $warna_1;?>;">
@@ -96,7 +98,7 @@ function item_service($no){
 
 				if ( $loop->have_posts() ){
 					while ( $loop->have_posts() ) : $loop->the_post();
-						echo '<div class="klien-img">';
+						echo '<div class="klien-img anim-logo">';
 						the_post_thumbnail();
 						echo '</div>';
 					endwhile; }
@@ -143,7 +145,7 @@ function item_service($no){
 						$meta_jabatan = get_post_meta( get_the_ID(), '_meta_jabatan', true );
 							?>
 							<div class="carousel-item <?php if($count==1){echo 'active';} ?>">
-							<div class="d-none d-md-block">
+							<div class="d-md-block">
 								<div class="thumbnail "><div><?php the_post_thumbnail(); ?></div></div>
 								<div class="isi "><?php the_content(); ?></div>
 								<div class="nama "><span><?php the_title(); ?></span></div>
@@ -174,9 +176,75 @@ function item_service($no){
 	</div>
 </div>
 
-<div class="wrapper hr-line no-shadow" style="background-color: <?php echo $warna_2;?>;">
-</div>
+<div class="wrapper" id="wrapper-harga">
+	<div class="<?php echo esc_html( $container ); ?>">
+		<h2 class="judul-section" id="section-produk">
+			<?php if (get_theme_mod('desain_harga_title')) {
+				echo get_theme_mod('desain_harga_title');
+			} else { echo 'HARGA';}?>
+		</h2>
+		<div class="paket-container">
+			<?php	
+			$plan = array (
+					1 => 'basic',
+					2 => 'regular',
+					3 => 'silver',
+					4 => 'gold',
+					5 => 'platinum'
+				);
 
+			for ($i=1; $i <= 5; $i++) :
+
+				//variabel yang di butuhkan
+				$harga = get_theme_mod('desain_harga_'.$plan[$i].'_harga');
+				$desc = get_theme_mod('desain_harga_'.$plan[$i].'_desc');
+				$file = get_theme_mod('desain_harga_'.$plan[$i].'_file');
+
+				//textarea to array
+				$ardesc = explode("\n", str_replace("\r", "", $desc));
+				$desclength = count($ardesc) - 1;
+
+				//jika harga kosong maka item tidak dimunculkan
+				if ($harga) : ?>
+					<div class="paket-item ">
+						<h3 class="paket-title"><?php echo strtoupper($plan[$i]);?></h3>
+						<div class="paket-box">
+							<div class="paket-harga">
+								<?php echo rubah_harga($harga).'/slide'; ?>
+							</div>
+							<div class="paket-fitur">								
+								<?php
+								if ($desclength != 0) {
+									echo '<ul class="list-fitur">';
+										for ($y=0; $y < $desclength; $y++) {printf('<li>%s</li>',$ardesc[$y]);}
+									echo '</ul>';
+								}
+								 ?>
+							</div>
+							<div class="paket-file">
+								<?php echo ( $file ? $file  : '' );?>
+							</div>
+						</div>
+					</div>
+			<?php
+				endif;
+			endfor; ?>
+		</div>
+		<div class="rule-container">
+			<?php 
+			$rule = get_theme_mod('desain_harga_description');
+			//textarea to array
+			$arrule = explode("\n", str_replace("\r", "", $rule));
+			$rulelength = count($arrule) - 1;
+			if ($rulelength != 0) {
+				echo '<ul class="list-rule">';
+					for ($z=0; $z < $rulelength; $z++) {printf('<li>%s</li>',$arrule[$z]);}
+				echo '</ul>';
+			}
+			 ?>
+		</div>
+	</div>
+</div>
 
 
 </div>

@@ -123,14 +123,13 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						$meta_jabatan = get_post_meta( get_the_ID(), '_meta_jabatan', true );
 							?>
 							<div class="carousel-item <?php if($count==1){echo 'active';} ?>">
-							<div class="d-none d-md-block">
+							<div class="d-md-block">
 								<div class="thumbnail "><div><?php the_post_thumbnail(); ?></div></div>
 								<div class="isi "><?php the_content(); ?></div>
 								<div class="nama "><span><?php the_title(); ?></span></div>
 								<div class="jabatan "><?php echo $meta_jabatan; ?></div>
 							</div>
 							</div>
-
 						<?php
 							$count=0;
 					 endwhile; }
@@ -174,7 +173,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				if ( $loop->have_posts() ){
 					while ( $loop->have_posts() ) : $loop->the_post();
-						echo '<div class="klien-img">';
+						echo '<div class="klien-img anim-logo">';
 						the_post_thumbnail();
 						echo '</div>';
 					endwhile; }
