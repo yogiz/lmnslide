@@ -129,9 +129,22 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
 			'home_produk_image_1', 
 			array(
 				'label'      => __( 'Produk image #1', 'lmnslide' ),
-				'description'=> 'Pilih gambar untuk hero background',
+				'description'=> '',
 				'section'    => 'lmnslide_home_produk',
 				'settings'   => 'home_produk_image_1',
+			) ) 
+		);
+
+	    $wp_customize->add_setting('home_produk_rollover_1');
+		$wp_customize->add_control( 
+			new WP_Customize_Image_Control( 
+			$wp_customize, 
+			'home_produk_rollover_1', 
+			array(
+				'label'      => __( 'Produk rollover #1', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_rollover_1',
 			) ) 
 		);
 
@@ -171,9 +184,22 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
 			'home_produk_image_2', 
 			array(
 				'label'      => __( 'Produk image #2', 'lmnslide' ),
-				'description'=> 'Pilih gambar untuk hero background',
+				'description'=> '',
 				'section'    => 'lmnslide_home_produk',
 				'settings'   => 'home_produk_image_2',
+			) ) 
+		);
+
+		$wp_customize->add_setting('home_produk_rollover_2');
+		$wp_customize->add_control( 
+			new WP_Customize_Image_Control( 
+			$wp_customize, 
+			'home_produk_rollover_2', 
+			array(
+				'label'      => __( 'Produk Rollover #2', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_rollover_2',
 			) ) 
 		);
 

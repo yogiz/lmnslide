@@ -47,12 +47,21 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<div class="container produk-content-container">
 			<h2 class="judul-section" id="section-produk">PRODUK</h2>
 			<div class="isi-produk row">
-				<div class="img-layout col-md-6">
+				<div class="img-layout  col-md-6">
 					<img src="<?php echo get_stylesheet_directory_uri();?>/image/komputer.png" class="img-dasar">
 					<?php if(get_theme_mod('home_produk_image_1')){
 						$isi_img_1 = get_theme_mod('home_produk_image_1');
+						$rollover_1 = get_theme_mod('home_produk_rollover_1');
 						}?>
-					<div class="img-isi" style="background: url(<?php echo $isi_img_1; ?>)no-repeat;background-size: cover;"></div>
+					<div class="panel-container-1">
+						<div class="panel front">
+							<div class="img-isi" style="background: url(<?php echo $isi_img_1; ?>)no-repeat;background-size: cover;"></div>
+						</div>
+						<div class="panel back">
+							<div class="img-isi" style="background: url(<?php echo $rollover_1; ?>)no-repeat;background-size: cover;"></div>
+						</div>
+					</div>
+	
 					<div class="deskripsi">
 						<h3 class="judul" style="color: <?php echo $warna_1;?>;">
 							<?php 
@@ -64,12 +73,20 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_1)); ?>" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
 					</div>
 				</div>
-				<div class="img-layout col-md-6">
+				<div class="img-layout  col-md-6">
 					<img src="<?php echo get_stylesheet_directory_uri();?>/image/komputer.png" class="img-dasar">
 					<?php if(get_theme_mod('home_produk_image_2')){
 						$isi_img_2 = get_theme_mod('home_produk_image_2');
+						$rollover_2 = get_theme_mod('home_produk_rollover_2');
 						}?>
-					<div class="img-isi" style="background: url(<?php echo $isi_img_2; ?>)no-repeat;background-size: cover;"></div>
+					<div class="panel-container-1">
+						<div class="panel front">
+							<div class="img-isi" style="background: url(<?php echo $isi_img_2; ?>)no-repeat;background-size: cover;"></div>
+						</div>
+						<div class="panel back">
+							<div class="img-isi" style="background: url(<?php echo $rollover_2; ?>)no-repeat;background-size: cover;"></div>
+						</div>
+					</div>
 					<div class="deskripsi">
 						<h3 class="judul" style="color: <?php echo $warna_1;?>;">
 							<?php 

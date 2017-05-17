@@ -1,11 +1,11 @@
 /*
- Theme Name:   Elemenslide Baru
+ Theme Name:   LMNSLIDE
  Theme URI:    https://www.bacapikiran.com
  Description:  Ini theme versi baru dari elemenslide.com
  Author:       Yz
  Author URI:   https://www.bacapikiran.com
  Template:     understrap
- Version:      0.2.1
+ Version:      1.0.1
  License:      Commercial
  Text Domain:  understrap-child
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
@@ -671,10 +671,44 @@ div.poin h4{
     line-height: 1;
 }
 
+.list-rule {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    list-style:none;
+}
+
+.list-rule :before {
+    content: "·";
+    font-size: 70px;
+    vertical-align: middle;
+    line-height: 0px;
+    position: relative;
+    top: -1px;
+}
+
 @media (max-width: 992px) {
     .isi-produk .img-isi{
         height: 169px;
         width: 301px;
+    }
+    .navbar{
+        overflow: hidden;
+    }
+    div#navbarNavDropdown {
+        background: rgb(81, 81, 81);
+        position: relative;
+        width: 100vw;
+        left: -30px;
+    }
+    #main-menu .menu-item{
+        border:0px solid;
+    }
+    .navbar-inverse .navbar-nav .nav-link{
+        padding: .5em 1em;
+    }
+    .navbar-inverse .navbar-nav .nav-link:hover{
+        background-color: rgba(252, 190, 43, 0.54);
     }
 }
 
@@ -721,7 +755,87 @@ div.poin h4{
     .col-md-6.kontak-isi {
         padding: 15px;
     }
+
+    #produk-wrapper {
+        height: 740px;
+    }
+    .img-dasar{
+        width: 200px;
+    }
+
+    .isi-produk .img-isi {
+        height: 103px;
+        width: 184px;
+        top: 8px;
+    }
+
+    #produk-wrapper .bawah {
+        height: 77px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+    }
+    .isi-produk .img-layout{
+        margin-bottom: 20px;
+    }
+
+    .isi-produk .deskripsi .btn{
+        background: #242426;
+        color: #ffffff !important;
+        font-size: 14px;
+    }
+
 }
+
+@media (max-width: 480px) {
+
+    .navbar-title {
+        max-width: 200px!important;
+    }
+
+    #frontpage-wrapper {
+        height: 260px;
+    }
+
+    .hero-caption.n1, .hero-training .hero-caption.n2, .hero-training .hero-caption.n2, .hero-desain .hero-caption.n3 {
+        font-size: 20px;
+    }
+
+    .hero-caption.n2, .hero-caption.n3, .hero-training .hero-caption.n1 , .hero-desain .hero-caption.n1{
+        font-size: 30px;
+    }
+
+    .hero-caption {
+        word-break: break-all;
+    }
+    .training-jadwal > p {
+        text-align: center!important;
+        margin-bottom: 0;
+    }
+    .trining-poster img {
+        border: 3px solid;
+        width: 100%;
+        margin: 10px auto;
+        display: block;
+    }
+    .training-jadwal, .training-fasilitas{
+        padding-top: 10px;
+        font-size: 15px;
+        font-weight: normal;
+    }
+    .training-fasilitas ul li:before{
+        /*left: 25px;*/
+    }
+    .training-poster{
+        padding: 0 25px;
+    }
+
+    #training-wrapper > .container >.row:after{
+        width: 80%;
+        border-bottom: 2px solid;
+    }
+}
+
 
 div#wrapper-harga {
     background-color: rgb(212, 212, 213);
@@ -753,7 +867,7 @@ div#wrapper-harga {
     transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
 }
 
-.paket-harga:hover{
+.paket-item:hover .paket-harga{
     transform: scale(1.5,1.5);
 }
 
@@ -819,4 +933,62 @@ h3.paket-title {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/*Rollover produk web home*/
+.panel-container-1,.panel-container-2 {
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    top: 0;
+    left: 0px;
+}
+
+.panel {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0px;
+}
+
+.panel.front {
+    z-index: 900;
+    text-align: center;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+       -moz-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+    -webkit-transition: all .4s ease-in-out;
+       -moz-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out;
+         -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+}
+
+.panel.back {
+    z-index: 1000;
+    -webkit-transform: rotateY(-180deg);
+       -moz-transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+    -webkit-transition: all .4s ease-in-out;
+       -moz-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out;
+         -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+}
+.flip .panel.front {
+    z-index: 900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+.flip .panel.back {
+    z-index: 1000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
 }
