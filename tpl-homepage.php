@@ -58,7 +58,22 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							<div class="img-isi" style="background: url(<?php echo $isi_img_1; ?>)no-repeat;background-size: cover;"></div>
 						</div>
 						<div class="panel back">
-							<div class="img-isi" style="background: url(<?php echo $rollover_1; ?>)no-repeat;background-size: cover;"></div>
+							<div class="img-isi" style="background: url(<?php echo $rollover_1; ?>)no-repeat;background-size: cover;">
+								<div class="rollover-overlay" style="background-color: <?php echo $warna_1;?>;">
+									<?php //rollover text
+									if(get_theme_mod('home_produk_rollover_text_1')){
+										$roll1 = get_theme_mod('home_produk_rollover_text_1');
+										$arroll1 = explode("\n", str_replace("\r", "", $roll1));
+										$roll1length = count($arroll1);
+										if ($roll1length != 0) {
+											echo '<div>';
+											for ($y=0; $y < $roll1length; $y++) {printf('<p>%s</p>',$arroll1[$y]);}
+											echo '</div>';
+										}
+									}
+									 ?>
+								</div>
+							</div>
 						</div>
 					</div>
 	
@@ -70,7 +85,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							} else { echo 'Setting produk title #1';}
 							 ?>
 						</h3>
-						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_1)); ?>" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
+						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_1)); ?>" target="_blank" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
 					</div>
 				</div>
 				<div class="img-layout  col-md-6">
@@ -84,7 +99,22 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							<div class="img-isi" style="background: url(<?php echo $isi_img_2; ?>)no-repeat;background-size: cover;"></div>
 						</div>
 						<div class="panel back">
-							<div class="img-isi" style="background: url(<?php echo $rollover_2; ?>)no-repeat;background-size: cover;"></div>
+							<div class="img-isi" style="background: url(<?php echo $rollover_2; ?>)no-repeat;background-size: cover;">
+								<div class="rollover-overlay" style="background-color: <?php echo $warna_1;?>;">
+									<?php //rollover text
+									if(get_theme_mod('home_produk_rollover_text_2')){
+										$roll2 = get_theme_mod('home_produk_rollover_text_2');
+										$arroll2 = explode("\n", str_replace("\r", "", $roll2));
+										$roll2length = count($arroll2);
+										if ($roll2length != 0) {
+											echo '<div>';
+											for ($y=0; $y < $roll2length; $y++) {printf('<p>%s</p>',$arroll2[$y]);}
+											echo '</div>';
+										}
+									}
+									 ?>	
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="deskripsi">
@@ -95,7 +125,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							} else { echo 'Setting produk title #2'; }
 							 ?>
 						</h3>
-						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_2)); ?>" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
+						<a href="<?php echo esc_url(get_theme_mod(home_produk_url_2)); ?>" target="_blank" class="btn" style="color: <?php echo $warna_2;?>;">Lihat Detail</a>
 					</div>
 				</div>
 			</div>

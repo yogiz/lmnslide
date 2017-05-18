@@ -148,6 +148,20 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
 			) ) 
 		);
 
+		$wp_customize->add_setting('home_produk_rollover_text_1');
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_produk_rollover_text_1', 
+			array(
+				'label'      => __( 'Produk Rollover text #1', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_rollover_text_1',
+				'type'		 => 'textarea'
+			) ) 
+		);
+
 	    $wp_customize->add_setting('home_produk_url_1');
 		$wp_customize->add_control( 
 			new WP_Customize_Control( 
@@ -200,6 +214,20 @@ if ( ! function_exists( 'lmnslide_custom_customize' ) ) {
 				'description'=> '',
 				'section'    => 'lmnslide_home_produk',
 				'settings'   => 'home_produk_rollover_2',
+			) ) 
+		);
+
+		$wp_customize->add_setting('home_produk_rollover_text_2');
+		$wp_customize->add_control( 
+			new WP_Customize_Control( 
+			$wp_customize, 
+			'home_produk_rollover_text_2', 
+			array(
+				'label'      => __( 'Produk Rollover text #2', 'lmnslide' ),
+				'description'=> '',
+				'section'    => 'lmnslide_home_produk',
+				'settings'   => 'home_produk_rollover_text_2',
+				'type'		 => 'textarea'
 			) ) 
 		);
 
